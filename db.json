@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Richard",
+      "email": "richard@email.com",
+      "password": "$2y$10$P/0McNEYbbdkO7yKgccnVumEXD2UNlmSI5US8DYy4HV05kCC8Q8YW"
+    },
+    {
+      "id": 2,
+      "username": "John",
+      "email": "john@email.com",
+      "password": "$2y$10$P/0McNEYbbdkO7yKgccnVumEXD2UNlmSI5US8DYy4HV05kCC8Q8YW"
+    },
+    {
+      "id": 3,
+      "username": "Jason",
+      "email": "jason@email.com",
+      "password": "$2y$10$P/0McNEYbbdkO7yKgccnVumEXD2UNlmSI5US8DYy4HV05kCC8Q8YW"
+    },
+    {
+      "email": "email@email.com",
+      "password": "$2a$10$u5yF7HuZGzxLebkcMj1gHe9Hl9Nucw7QcE4D1tfYeww8t9jg6MDKq",
+      "id": 4
+    },
+    {
+      "email": "emamaaz@email.com",
+      "password": "$2a$10$2v5yzcwRGcz5RM8NCM0tmualbYEK8AiOMVaBisbroGaea64gMRfle",
+      "username": "Ricard",
+      "id": 5
+    },
+    {
+      "email": "eeeeeeeee@eeeee.com",
+      "password": "$2a$10$h/aupDnpQVtPRhTk2VYUNOeMmeGwBZHdCH183zFE5GroCf07v2lWi",
+      "username": "eeeeee",
+      "id": 6
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "Fusce pulvinar lacus sed urna",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ex risus, pellentesque id mi nec, pulvinar volutpat ex. Praesent fringilla mollis felis. Aliquam sagittis eros at tincidunt porttitor. Nulla tempus est ornare sem ullamcorper bibendum. In turpis est, faucibus et tincidunt vitae, ultricies vitae neque. Etiam nec nulla sodales, fermentum est vel, venenatis est. Donec fermentum nunc vel metus iaculis sollicitudin malesuada sit amet lectus. Maecenas a lorem sit amet tellus tempor vulputate. Nam lobortis tortor diam, id congue eros rutrum eu. Sed commodo justo libero, interdum sollicitudin lacus malesuada sed. Nulla est arcu, luctus vel eleifend in, placerat in diam. Mauris sit amet turpis tortor.\n\nNulla facilisi. Sed commodo vel elit ut varius. Phasellus fermentum nisi eget nibh tincidunt, at rutrum elit convallis. Sed sit amet malesuada nulla. Maecenas consequat nibh ipsum. Nulla sed tellus lacinia, iaculis sapien vitae, condimentum eros. Integer ipsum sapien, placerat in viverra vitae, suscipit nec tellus. Curabitur consequat eros erat, a accumsan libero imperdiet eget. Maecenas ac sollicitudin neque. Morbi dui neque, fermentum in dui sed, porta euismod mauris. Suspendisse potenti.\n\nNunc ultrices fermentum sollicitudin. Curabitur urna justo, lobortis et aliquam at, consequat in tellus. Aenean at quam in ex aliquet ornare sed elementum urna. In convallis nibh nec nisl sagittis dictum. In rhoncus euismod diam nec scelerisque. Vivamus cursus ornare cursus. Proin rhoncus urna ut arcu egestas sollicitudin. Nunc vel ligula maximus, sollicitudin dolor ac, placerat metus. Sed semper aliquam turpis, vitae finibus tortor lacinia elementum.\n\nSuspendisse id mi pretium tellus placerat pellentesque vitae et purus. Sed vehicula dui nec massa mollis condimentum. Proin ornare laoreet urna, quis maximus dui suscipit eget. Phasellus eget orci id lorem aliquam suscipit. Sed a malesuada quam. Morbi molestie dapibus sapien, eu ullamcorper lacus sodales in. Nulla facilisi. In ultrices, ex sed pharetra venenatis, nunc sapien faucibus dolor, quis dictum ex ante vel est. Duis nec mollis sapien. Etiam sit amet sapien a arcu gravida fringilla. Nulla vitae sodales massa, at hendrerit libero. Sed feugiat ante mollis fringilla aliquet. Curabitur augue turpis, molestie suscipit ipsum at, viverra efficitur magna. Donec congue at leo eu egestas. Cras ultricies nulla sit amet lacus accumsan blandit."
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "title": "Fusce a nibh eu metus",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu arcu vel ante finibus blandit sed ac enim. Quisque mollis libero nunc, eu posuere neque volutpat vel. Sed interdum mi sit amet lacus tincidunt, ut mattis turpis faucibus. Ut a placerat augue. Etiam in arcu ac felis tincidunt rutrum quis quis tellus. Aliquam eget tincidunt massa. Proin at bibendum ligula. Cras eu diam egestas, sodales lorem sed, maximus metus. Morbi commodo eu magna sit amet iaculis. Morbi maximus vel massa sit amet hendrerit. Etiam placerat nisi nec iaculis venenatis.\n\nDonec luctus a turpis sit amet consectetur. Aenean tempus ipsum nunc, vitae dapibus dui tincidunt sit amet. Phasellus facilisis enim sit amet justo dictum, a condimentum odio semper. Pellentesque sed scelerisque nisi. Nunc nec faucibus felis. Fusce vel felis at tortor aliquam elementum quis ac dui. Aliquam ultricies, quam vel vestibulum rutrum, est erat tincidunt lorem, ut ultrices felis nunc vitae orci. Pellentesque feugiat turpis vel magna lobortis maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras a risus id sapien interdum suscipit vel sit amet turpis. Vivamus vulputate libero sit amet sapien gravida elementum.\n\nCras in nunc sed erat faucibus vestibulum in id dui. Ut tempus pretium lorem, a ultrices felis ultrices at. Fusce tristique tincidunt tortor eu viverra. Cras sit amet porta ex. Pellentesque tellus tortor, placerat ac hendrerit semper, ullamcorper vitae justo. Nullam fermentum, est a imperdiet fringilla, dui dui sagittis tortor, sed laoreet orci nulla sed risus. Vestibulum auctor blandit sapien lacinia mollis. Vestibulum venenatis nunc eu fringilla facilisis. Duis at massa non risus efficitur luctus a eu diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent cursus mi ac faucibus dictum. Vivamus congue accumsan nibh, quis blandit purus placerat vel. Donec sed euismod ligula. Nam porttitor vulputate sapien, at egestas augue imperdiet vitae. Cras venenatis turpis vitae mattis volutpat.\n\n"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "title": "Donec ornare turpis elit, at",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id mollis nibh. Sed pharetra diam turpis, sit amet sagittis nunc porta a. Cras vitae tellus facilisis, sollicitudin diam ac, pellentesque nisl. Curabitur in nibh magna. Duis urna diam, sodales at libero ac, convallis suscipit diam. In tincidunt at ex in posuere. Nullam non volutpat lectus, aliquam aliquet nulla. Mauris ante nunc, ullamcorper vitae fermentum et, posuere sed lacus. Fusce sagittis auctor arcu ac facilisis. Duis sagittis auctor mi vel pulvinar. Sed ultricies aliquet ipsum, nec sollicitudin odio. Ut volutpat ex id nisi venenatis, ut feugiat nulla tristique. Ut nec magna justo. Mauris consequat ligula quam, nec venenatis augue varius nec. Quisque eget felis suscipit, condimentum eros sit amet, hendrerit metus.\n\nQuisque feugiat laoreet magna. Vestibulum id risus nec eros tempor volutpat quis non libero. Curabitur condimentum ante blandit nulla mattis, a lacinia mi commodo. Integer pulvinar vel erat eu dignissim. Donec eget mauris eu purus convallis scelerisque. Vivamus aliquam tincidunt augue eu consequat. Quisque nec diam vitae ipsum mattis suscipit. Cras massa turpis, viverra nec augue ac, mattis cursus mauris. Quisque tristique velit vitae massa facilisis, vehicula dapibus augue commodo. Sed viverra lobortis elit, et iaculis nunc scelerisque sit amet. Morbi sit amet dapibus felis.\n\nDonec blandit, lorem in ultrices ullamcorper, augue elit tristique nisl, sit amet maximus magna justo eu elit. Pellentesque euismod, neque a porttitor ornare, turpis quam pretium nisi, in laoreet est nisl sit amet ex. Donec in mauris arcu. Duis tincidunt, tellus at consectetur pellentesque, arcu sapien dictum nisl, aliquet imperdiet nunc tortor vitae tortor. Quisque suscipit pulvinar enim, sed iaculis ante rhoncus in. Praesent id lectus convallis, pulvinar diam quis, bibendum felis. Donec pulvinar vehicula mi at convallis. Phasellus rutrum leo et nulla egestas hendrerit a id massa. Etiam feugiat turpis eu metus tristique, eget condimentum nibh luctus. Nulla ornare mattis turpis, vitae cursus ligula bibendum aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus sed orci vitae aliquam. Ut ut sagittis mauris, volutpat molestie ipsum. Etiam sit amet scelerisque neque.\n\nPellentesque iaculis at dui congue suscipit. Vestibulum tincidunt sit amet odio at scelerisque. Praesent non erat ac magna hendrerit rhoncus. Nam in facilisis dolor. Ut euismod sem vitae velit viverra, quis commodo felis pellentesque. Duis facilisis, lacus vitae lacinia ultricies, lorem nulla vulputate nunc, eu mattis lorem lacus ut ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed varius tortor."
+    }
+  ],
+  "comments": [
+    {
+      "id": 2,
+      "userId": 1,
+      "content": "Merci",
+      "articleId": 1,
+      "date": "2023-05-12T16:07:45"
+    },
+    {
+      "content": "eee",
+      "userId": 1,
+      "articleId": 1,
+      "date": "2023-06-08T12:31:34.397Z",
+      "id": 4
+    },
+    {
+      "content": "eee",
+      "userId": 1,
+      "articleId": 1,
+      "date": "2023-06-08T13:01:16.026Z",
+      "id": 5
+    }
+  ]
+}

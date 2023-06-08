@@ -1,0 +1,29 @@
+{{user | json}}
+
+<form #loginForm="ngForm"  (ngSubmit)="onSubmit()" >
+  <div>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        name="email"
+        required
+        [(ngModel)]="user.email"
+        matInput>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Mot de passe</mat-label>
+      <input
+        [(ngModel)]="user.password"
+        name="plainPassword" required
+        matInput
+        [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </div>
+  <button mat-stroked-button color="primary">Connexion</button>
+</form>

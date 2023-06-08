@@ -1,0 +1,19 @@
+.list-item {
+  border-bottom: 1px solid #e3e3e3;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.list-last-item {
+  margin-left: auto;
+}
+mat-divider {
+  margin-left: 10px;
+  margin-right: 10px;
+}

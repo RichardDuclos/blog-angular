@@ -1,0 +1,12 @@
+<div>
+  <app-login *ngIf="loginForm" />
+  <app-register *ngIf="!loginForm" />
+  <div *ngIf="loginForm">
+    Pas encore de compte ?
+    <button mat-button color="primary" (click)="toggleForm()">inscrivez vous</button>
+  </div>
+  <div *ngIf="!loginForm">
+    Vous possedez déjà un compte ?
+    <button mat-button color="primary" (click)="toggleForm()">connectez vous</button>
+  </div>
+</div>

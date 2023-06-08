@@ -1,0 +1,18 @@
+<mat-list-item *ngIf="article && article.user && article.comments"
+  class="list-item"
+  (click)="goToDetails()">
+  <div class="wrapper">
+    <div>{{article.title}}</div>
+    <div class="list-last-item">par {{ article.user.username }}</div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div>
+      {{ article.comments.length }}
+    </div>
+    <div>
+        <mat-icon>
+          message
+        </mat-icon>
+    </div>
+  </div>
+
+</mat-list-item>

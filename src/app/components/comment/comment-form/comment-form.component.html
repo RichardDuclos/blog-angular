@@ -1,0 +1,18 @@
+<form #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)">
+  <div>
+    <mat-form-field>
+      <mat-label>Commentaire</mat-label>
+      <textarea
+        id="text-content"
+        maxlength="600"
+        required name="content"
+        [(ngModel)]="comment.content"
+        matInput></textarea>
+    </mat-form-field>
+  </div>
+  <div >
+    <button
+      [disabled]="!commentForm.form.valid"
+      mat-stroked-button color="primary">Envoyer</button>
+  </div>
+</form>

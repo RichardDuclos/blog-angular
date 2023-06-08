@@ -1,0 +1,25 @@
+<div *ngIf="article && comments && article.user && user">
+  <h1 id="article-title">{{article.title}}</h1>
+  <div id="authorName">Par {{article.user.username}}</div>
+  <div>
+    <button mat-icon-button
+            *ngIf="article.user.id === user!.id"
+            (click)="delete(article)">
+      <mat-icon color="warn">delete_forever</mat-icon>
+    </button>
+  </div>
+  <p id="articleContent">{{article.content}}</p>
+  <h2 id="comment-title">Commentaires</h2>
+  <app-comment-form [article]="article" [user]="user" (newCommentEvent)="commentsUpdated()" />
+  <div id="comment-content">
+    <app-comment-item *ngFor="let comment of comments" [comment]="comment" (commentDeleted)="commentsUpdated()" />
+    <div class="load-more-wrapper" *ngIf="comments && comments.length !== totalComments">
+      <button
+        mat-raised-button color="primary"
+        (click)="increaseLimit()">Charger plus</button>
+    </div>
+    <div *ngIf="comments.length === 0">
+      Aucun commentaire
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+#article-title, #comment-title {
+  margin-bottom: 0px;
+  font-size: 2rem;
+}
+#authorName {
+  margin-bottom: 50px;
+}
+#articleContent {
+  margin-bottom: 50px;
+  font-size: 1.2rem;
+}
+#commentFormTitle {
+  margin-top: 10px;
+}
+#comment-content {
+  //margin-bottom: 500px;
+  padding-bottom: 50px;
+  margin-top: 30px;
+}
+.load-more-wrapper {
+  width: fit-content;
+  margin: auto;
+}

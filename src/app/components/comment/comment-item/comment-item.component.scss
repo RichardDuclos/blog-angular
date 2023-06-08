@@ -1,0 +1,16 @@
+mat-card {
+  margin: 10px;
+  mat-card-header {
+    .username {
+      font-weight: bolder;
+    }
+  }
+  mat-card-content {
+    .content, .date {
+      margin-bottom: 10px;
+    }
+    .content {
+      margin-top: 10px;
+    }
+  }
+}

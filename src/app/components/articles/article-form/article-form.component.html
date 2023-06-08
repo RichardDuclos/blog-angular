@@ -1,0 +1,29 @@
+{{ article | json }}
+<form #articleForm="ngForm" (ngSubmit)="onSubmit(articleForm)">
+  <div>
+    <mat-form-field>
+      <mat-label>Titre</mat-label>
+      <input
+        id="title"
+        required name="title"
+        [(ngModel)]="article.title"
+        matInput />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Contenu</mat-label>
+      <textarea
+        id="text-content"
+        maxlength="600"
+        required name="content"
+        [(ngModel)]="article.content"
+        matInput></textarea>
+    </mat-form-field>
+  </div>
+  <div >
+    <button
+      [disabled]="!articleForm.form.valid"
+      mat-stroked-button color="primary">Envoyer</button>
+  </div>
+</form>
