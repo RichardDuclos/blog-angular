@@ -28,10 +28,14 @@ export class CommentService {
   }
 
   get(article: Article, limit: number): Observable<HttpResponse<Comment[]>> {
-    return this.http.get<Comment[]>(`${this.apiUrl}/articles/${article.id}/comments?_expand=user&_limit=${limit}&_sort=date&_order=asc`, {observe: 'response'})
+    return this.http.get<Comment[]>(`${this.apiUrl}/articles/${article.id}/comments?_expand=article&_expand=user&_limit=${limit}&_sort=date&_order=asc`, {observe: 'response'})
   }
 
   delete(comment: Comment) {
     return this.http.delete(`${this.apiUrl}/comments/${comment.id}`)
+  }
+
+  edit(comment: Comment): Observable<Comment> {
+    return this.http.patch<Comment>(`${this.apiUrl}/comments/${comment.id}`, comment)
   }
 }

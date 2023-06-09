@@ -13,6 +13,6 @@
   <div >
     <button
       [disabled]="!commentForm.form.valid"
-      mat-stroked-button color="primary">Envoyer</button>
+      mat-stroked-button color="primary">{{type === 'create'? 'Envoyer' : 'Editer'}}</button>
   </div>
 </form>

@@ -4,5 +4,11 @@
     *ngFor="let article of articles"
     [article]="article" [user]="user"
   />
+  <mat-paginator [length]="totalArticles"
+    [pageSize]="limit"
+    [pageSizeOptions]="[5,10, 15, 20]"
+    aria-label="Select page"
+    (page)="handlePageEvent($event)"
+  >
+  </mat-paginator>
 </mat-list>
-Fin du fil

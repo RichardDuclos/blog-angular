@@ -13,6 +13,9 @@ export class CommentItemComponent implements OnInit{
   @Input() comment: Comment | undefined;
   user?: User;
   @Output() commentDeleted: EventEmitter<true> = new EventEmitter<true>();
+  @Output() commentUpdated: EventEmitter<Comment> = new EventEmitter<Comment>();
+  editingComment: boolean= false;
+  editedComment?: Comment;
 
   constructor(private securityService: SecurityService, private commentService: CommentService) {
   }
@@ -34,5 +37,14 @@ export class CommentItemComponent implements OnInit{
         this.commentDeleted.emit(true)
       }
     )
+  }
+
+  toggleEditing(comment: Comment) {
+    this.editingComment = !this.editingComment;
+  }
+
+  edit(comment: Comment) {
+    this.comment = comment
+    this.commentUpdated.emit(comment)
   }
 }

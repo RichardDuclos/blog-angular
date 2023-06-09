@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {environment} from "../../../environments/environment";
 import {Observable} from "rxjs";
 import {Article} from "../../models/article.model";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpResponse} from "@angular/common/http";
 import {Comment} from "../../models/comment.model";
 
 @Injectable({
@@ -13,8 +13,8 @@ export class ArticleService {
   constructor(private http: HttpClient) {
     this.apiUrl = environment.apiURL + '/articles'
   }
-  getAll(): Observable<Article[]> {
-    return this.http.get<Article[]>(`${this.apiUrl}?_expand=user&_embed=comments`)
+  getAll(limit: number, page: number): Observable<HttpResponse<Article[]>> {
+    return this.http.get<Article[]>(`${this.apiUrl}?_expand=user&_embed=comments&_limit=${limit}&_page=${page}`, {observe: 'response'})
   }
 
   get(id: number): Observable<Article> {

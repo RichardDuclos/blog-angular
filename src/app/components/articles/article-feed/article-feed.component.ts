@@ -4,6 +4,8 @@ import {ArticleService} from "../../../services/article/article.service";
 import {Router} from "@angular/router";
 import {Subscription} from "rxjs";
 import { User } from 'src/app/models/user.model';
+import {HttpResponse} from "@angular/common/http";
+import {PageEvent} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-article-feed',
@@ -14,6 +16,9 @@ export class ArticleFeedComponent  implements OnInit, OnDestroy {
   articles: Article[] = [];
   @Input() user?: User;
   subscription: Subscription | undefined;
+  page: number = 1;
+  limit: number = 10;
+  totalArticles: number = 0;
   constructor(private articleService: ArticleService) {
   }
 
@@ -30,13 +35,27 @@ export class ArticleFeedComponent  implements OnInit, OnDestroy {
   }
 
   fetchArticles() {
-    this.subscription = this.articleService.getAll().subscribe(
-      (articles: Article[]) => {
+    this.subscription = this.articleService.getAll(this.limit,this.page).subscribe(
+      (data: HttpResponse<Article[]>) => {
+        const count = data.headers.get('X-Total-Count');
+        if(count) {
+          this.totalArticles = +count;
+        }
+        let articles: Article[] = [];
+        if(data.body !== null) {
+          articles = data.body;
+        }
         this.articles = articles;
       },
       (error) =>  {
         console.log('Api call error')
       }
     )
+  }
+
+  handlePageEvent($e: PageEvent) {
+    this.limit = $e.pageSize;
+    this.page = $e.pageIndex + 1;
+    this.fetchArticles()
   }
 }

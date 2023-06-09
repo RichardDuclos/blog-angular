@@ -12,16 +12,18 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./comment-form.component.scss']
 })
 export class CommentFormComponent implements OnInit{
-  comment: Comment = {
+  @Input() comment: Comment = {
     content: '',
   }
   @Input() article?: Article;
   @Input() user?: User;
-  @Output() newCommentEvent: EventEmitter<true> = new EventEmitter<true>();
+  @Output() formSubmit: EventEmitter<Comment> = new EventEmitter<Comment>();
+  @Input() type: string = 'create';
   constructor(private securityService: SecurityService, private commentService: CommentService) {
   }
 
   ngOnInit() {
+    console.log(this.type)
     if(!this.user) {
       throw new Error('user must be declared')
     }
@@ -35,12 +37,21 @@ export class CommentFormComponent implements OnInit{
   }
 
   onSubmit(form: NgForm): void {
-    this.commentService.create(this.comment).subscribe(
-      (comment: Comment) => {
-        this.newCommentEvent.emit(true);
-        this.comment.content = '';
-        form.resetForm();
-      }
-    );
+    if(this.type === 'edit') {
+      this.commentService.edit(this.comment).subscribe(
+        (comment: Comment) => this.formSuccess(comment, form)
+      );
+    } else if(this.type === 'create') {
+      this.commentService.create(this.comment).subscribe(
+        (comment: Comment) => this.formSuccess(comment, form)
+      );
+    }
+  }
+  formSuccess(comment: Comment, form: NgForm) {
+    this.formSubmit.emit(comment);
+    if(this.type === 'create') {
+      this.comment.content = '';
+    }
+    form.resetForm();
   }
 }

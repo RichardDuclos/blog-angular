@@ -1,18 +1,23 @@
 <div *ngIf="article && comments && article.user && user">
-  <h1 id="article-title">{{article.title}}</h1>
-  <div id="authorName">Par {{article.user.username}}</div>
-  <div>
-    <button mat-icon-button
-            *ngIf="article.user.id === user!.id"
-            (click)="delete(article)">
-      <mat-icon color="warn">delete_forever</mat-icon>
-    </button>
+  <div class="article-wrapper">
+    <h1 id="article-title">{{article.title}}</h1>
+    <div id="authorName">Par {{article.user.username}}</div>
+
+    <p id="articleContent">{{article.content}}</p>
+    <div *ngIf="article.user.id === user!.id">
+      <button mat-raised-button color="warn"
+        (click)="delete(article)">
+        Supprimer
+      </button>
+    </div>
   </div>
-  <p id="articleContent">{{article.content}}</p>
+
   <h2 id="comment-title">Commentaires</h2>
-  <app-comment-form [article]="article" [user]="user" (newCommentEvent)="commentsUpdated()" />
+  <app-comment-form [article]="article" [user]="user" (formSubmit)="commentsUpdated()" />
   <div id="comment-content">
-    <app-comment-item *ngFor="let comment of comments" [comment]="comment" (commentDeleted)="commentsUpdated()" />
+    <app-comment-item *ngFor="let comment of comments"
+      [comment]="comment"
+      (commentDeleted)="commentsUpdated()" (commentUpdated)="commentsUpdated()" />
     <div class="load-more-wrapper" *ngIf="comments && comments.length !== totalComments">
       <button
         mat-raised-button color="primary"

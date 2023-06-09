@@ -1,8 +1,13 @@
 .list-item {
   border-bottom: 1px solid #e3e3e3;
-  &:hover {
-    cursor: pointer;
+  cursor: pointer;
+  &:hover .test{
+    width: 100%;
   }
+}
+.test {
+  width: 0px; height: 1px; background-color: #3f51b5;
+  transition: .5s;
 }
 .wrapper {
   display: flex;

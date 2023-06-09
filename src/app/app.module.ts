@@ -27,6 +27,7 @@ import {AuthInterceptor} from "./interceptor/authconfig.interceptor";
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
 import { ArticleCreationComponent } from './pages/article-creation/article-creation.component';
 import { ArticleFormComponent } from './components/articles/article-form/article-form.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -43,21 +44,22 @@ import { ArticleFormComponent } from './components/articles/article-form/article
     ArticleCreationComponent,
     ArticleFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatListModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    InfiniteScrollModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatListModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        InfiniteScrollModule,
+        MatPaginatorModule
+    ],
   providers: [
     UserService,
     ArticleService,

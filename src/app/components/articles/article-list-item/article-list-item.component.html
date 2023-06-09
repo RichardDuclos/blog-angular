@@ -2,7 +2,9 @@
   class="list-item"
   (click)="goToDetails()">
   <div class="wrapper">
-    <div>{{article.title}}</div>
+    <div class="article-title">{{article.title}}
+      <div class="test"></div>
+    </div>
     <div class="list-last-item">par {{ article.user.username }}</div>
     <mat-divider [vertical]="true"></mat-divider>
     <div>
