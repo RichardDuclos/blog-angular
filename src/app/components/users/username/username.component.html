@@ -1,0 +1,3 @@
+<a class="username-link" [ngClass]="{'admin': user.admin}" *ngIf="user" [routerLink]="'users/' + user.id">
+  {{user.username}}
+</a>

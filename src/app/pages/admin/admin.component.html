@@ -1,0 +1,14 @@
+<div>
+  <h1>Console d'administration</h1>
+  <h2>Commentaires non vérifiés</h2>
+  <div class="unverified-comments-wrapper">
+    <div *ngIf="commentsReady" >
+      <app-comment-item  *ngFor="let comment of comments"
+        [comment]="comment"
+        (commentDeleted)="unverifiedCommentsUpdated()" (commentUpdated)="unverifiedCommentsUpdated()" />
+    </div>
+  </div>
+  <div *ngIf="!commentsReady">
+    <app-loader />
+  </div>
+</div>

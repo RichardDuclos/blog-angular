@@ -1,0 +1,12 @@
+<div *ngIf="user && currentUser">
+  <div>
+    <h1>Profil de {{user.username}}</h1>
+  </div>
+  <div>
+    {{user.email}}
+  </div>
+  <div>
+    <h2>Articles de {{user.username}}</h2>
+  </div>
+  <app-article-feed [user]="currentUser"  [aboutUser]="user"/>
+</div>
