@@ -28,6 +28,13 @@ import {InfiniteScrollModule} from "ngx-infinite-scroll";
 import { ArticleCreationComponent } from './pages/article-creation/article-creation.component';
 import { ArticleFormComponent } from './components/articles/article-form/article-form.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { LoaderComponent } from './components/loader/loader.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { UsernameDirective } from './directives/username.directive';
+import { AdminComponent } from './pages/admin/admin.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { UserDetailsComponent } from './components/users/user-details/user-details.component';
+import { UsernameComponent } from './components/users/username/username.component';
 
 @NgModule({
   declarations: [
@@ -42,24 +49,31 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     LoginComponent,
     RegisterComponent,
     ArticleCreationComponent,
-    ArticleFormComponent
+    ArticleFormComponent,
+    LoaderComponent,
+    UsernameDirective,
+    AdminComponent,
+    ProfileComponent,
+    UserDetailsComponent,
+    UsernameComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        MatListModule,
-        MatCardModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        MatInputModule,
-        FormsModule,
-        ReactiveFormsModule,
-        InfiniteScrollModule,
-        MatPaginatorModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatListModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InfiniteScrollModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule
+  ],
   providers: [
     UserService,
     ArticleService,

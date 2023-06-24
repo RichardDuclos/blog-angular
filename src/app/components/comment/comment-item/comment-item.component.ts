@@ -44,7 +44,22 @@ export class CommentItemComponent implements OnInit{
   }
 
   edit(comment: Comment) {
-    this.comment = comment
-    this.commentUpdated.emit(comment)
+    this.comment = comment;
+    this.editingComment = false;
+    this.commentUpdated.emit(comment);
+  }
+
+  validate(comment: Comment) {
+    if(this.comment === undefined || this.comment.validated === undefined) {
+      return;
+    }
+    this.comment.validated = true;
+    this.commentService.edit(this.comment).subscribe(
+      (comment: Comment) => {
+        this.comment = comment;
+        this.commentUpdated.emit(comment);
+      }
+    )
+
   }
 }

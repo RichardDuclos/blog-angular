@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {environment} from "../../../environments/environment";
-import {catchError, lastValueFrom, map, Observable, of, Subscription} from "rxjs";
+import {BehaviorSubject, catchError, lastValueFrom, map, Observable, of, Subscription} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {User} from "../../models/user.model";
 import {UserService} from "../user/user.service";
@@ -25,9 +25,8 @@ export class SecurityService {
           }
           this.setJwt(data.accessToken);
           this.setLocalUser(data.user);
+          this.changeConnectionState(true)
           this.router.navigate(['/']);
-
-
         }
       );
   }
@@ -82,5 +81,12 @@ export class SecurityService {
     this.removeJwt();
     this.removeLocalUser();
     this.router.navigate(['/auth']);
+    this.changeConnectionState(false);
+  }
+
+  private connectionSource = new BehaviorSubject(false);
+  connectionMessage = this.connectionSource.asObservable();
+  changeConnectionState(state: boolean) {
+    this.connectionSource.next(state);
   }
 }

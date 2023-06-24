@@ -5,6 +5,7 @@ export interface User {
   username?: string;
   email?: string;
   password?: string;
+  admin?: boolean;
   comments?: Comment[];
   articles?: Article[];
 }

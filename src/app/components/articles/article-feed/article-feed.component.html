@@ -1,14 +1,21 @@
-{{articles.length}} article{{ articles.length > 1 ? 's' : '' }}.
-<mat-list>
-  <app-article-list-item
-    *ngFor="let article of articles"
-    [article]="article" [user]="user"
-  />
-  <mat-paginator [length]="totalArticles"
-    [pageSize]="limit"
-    [pageSizeOptions]="[5,10, 15, 20]"
-    aria-label="Select page"
-    (page)="handlePageEvent($event)"
-  >
-  </mat-paginator>
-</mat-list>
+<div *ngIf="pageReady">
+  {{totalArticles}} article{{ articles.length > 1 ? 's' : '' }}.
+  <mat-list>
+    <app-article-list-item
+      *ngFor="let article of articles"
+      [article]="article" [user]="user"
+    />
+    <div class="paginator-wrapper">
+      <mat-paginator [length]="totalArticles"
+                     [pageSize]="limit"
+                     aria-label="Select page"
+                     [pageIndex]="page"
+                     [hidePageSize]="true"
+                     (page)="handlePageEvent($event)"
+      >
+      </mat-paginator>
+    </div>
+
+  </mat-list>
+</div>
+<app-loader [show]="!pageReady" />

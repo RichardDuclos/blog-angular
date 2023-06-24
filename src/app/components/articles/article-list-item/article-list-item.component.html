@@ -1,11 +1,11 @@
 <mat-list-item *ngIf="article && article.user && article.comments"
   class="list-item"
-  (click)="goToDetails()">
+  >
   <div class="wrapper">
-    <div class="article-title">{{article.title}}
+    <div class="article-title" (click)="goToDetails()">{{article.title}}
       <div class="test"></div>
     </div>
-    <div class="list-last-item">par {{ article.user.username }}</div>
+    <div class="list-last-item" >par <app-username [user]="article.user" /></div>
     <mat-divider [vertical]="true"></mat-divider>
     <div>
       {{ article.comments.length }}

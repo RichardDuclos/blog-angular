@@ -2,7 +2,7 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Article} from "../../../models/article.model";
 import {ArticleService} from "../../../services/article/article.service";
 import {Router} from "@angular/router";
-import {Subscription} from "rxjs";
+import {delay, Subscription} from "rxjs";
 import { User } from 'src/app/models/user.model';
 import {HttpResponse} from "@angular/common/http";
 import {PageEvent} from "@angular/material/paginator";
@@ -15,10 +15,12 @@ import {PageEvent} from "@angular/material/paginator";
 export class ArticleFeedComponent  implements OnInit, OnDestroy {
   articles: Article[] = [];
   @Input() user?: User;
+  @Input() aboutUser?: User;
   subscription: Subscription | undefined;
-  page: number = 1;
+  page: number = 0;
   limit: number = 10;
   totalArticles: number = 0;
+  pageReady: boolean = false;
   constructor(private articleService: ArticleService) {
   }
 
@@ -35,27 +37,37 @@ export class ArticleFeedComponent  implements OnInit, OnDestroy {
   }
 
   fetchArticles() {
-    this.subscription = this.articleService.getAll(this.limit,this.page).subscribe(
-      (data: HttpResponse<Article[]>) => {
-        const count = data.headers.get('X-Total-Count');
-        if(count) {
-          this.totalArticles = +count;
-        }
-        let articles: Article[] = [];
-        if(data.body !== null) {
-          articles = data.body;
-        }
-        this.articles = articles;
-      },
-      (error) =>  {
-        console.log('Api call error')
-      }
-    )
+    this.pageReady = false;
+    if(!this.aboutUser) {
+      this.subscription = this.articleService.getAll(this.limit,this.page + 1)
+        .subscribe(
+          (data: HttpResponse<Article[]>) => this.handleResponse(data)
+        )
+    } else {
+      this.subscription = this.articleService.getAll(this.limit,this.page + 1, this.aboutUser.id)
+        .subscribe(
+          (data: HttpResponse<Article[]>) => this.handleResponse(data)
+        )
+    }
   }
 
+  handleResponse(data: HttpResponse<Article[]>)  {
+    console.log('yoo')
+    const count = data.headers.get('X-Total-Count');
+    if(count) {
+      this.totalArticles = +count;
+    }
+    let articles: Article[] = [];
+    if(data.body !== null) {
+      articles = data.body;
+    }
+    this.articles = articles;
+    console.log(this.articles)
+    this.pageReady = true;
+  }
   handlePageEvent($e: PageEvent) {
     this.limit = $e.pageSize;
-    this.page = $e.pageIndex + 1;
+    this.page = $e.pageIndex;
     this.fetchArticles()
   }
 }

@@ -26,8 +26,11 @@ export class CommentService {
     comment.date = new Date()
     return this.http.post<Comment>(`${this.apiUrl}/comments`, comment)
   }
+  get(): Observable<Comment []> {
+    return this.http.get<Comment[]>(`${this.apiUrl}/comments?_expand=article&_expand=user&_sort=date&_order=desc`)
 
-  get(article: Article, limit: number): Observable<HttpResponse<Comment[]>> {
+  }
+  getArticleComments(article: Article, limit: number): Observable<HttpResponse<Comment[]>> {
     return this.http.get<Comment[]>(`${this.apiUrl}/articles/${article.id}/comments?_expand=article&_expand=user&_limit=${limit}&_sort=date&_order=asc`, {observe: 'response'})
   }
 
@@ -35,7 +38,7 @@ export class CommentService {
     return this.http.delete(`${this.apiUrl}/comments/${comment.id}`)
   }
 
-  edit(comment: Comment): Observable<Comment> {
+  edit(comment: Comment) {
     return this.http.patch<Comment>(`${this.apiUrl}/comments/${comment.id}`, comment)
   }
 }

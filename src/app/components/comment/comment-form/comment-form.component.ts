@@ -14,6 +14,7 @@ import {NgForm} from "@angular/forms";
 export class CommentFormComponent implements OnInit{
   @Input() comment: Comment = {
     content: '',
+    validated: false
   }
   @Input() article?: Article;
   @Input() user?: User;

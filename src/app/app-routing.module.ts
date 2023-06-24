@@ -5,9 +5,13 @@ import {ArticleDetailsComponent} from "./pages/article-details/article-details.c
 import {AuthComponent} from "./pages/auth/auth.component";
 import {AuthGuard} from "./guards/auth.guard";
 import {ArticleCreationComponent} from "./pages/article-creation/article-creation.component";
+import {AdminComponent} from "./pages/admin/admin.component";
+import {ProfileComponent} from "./pages/profile/profile.component";
 
 const routes: Routes = [
   {path: 'auth', component: AuthComponent},
+  {path: 'admin', component: AdminComponent},
+  {path: 'users/:id', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: '', component: MainComponent, canActivate: [AuthGuard] },
   {path: 'articles/new', component: ArticleCreationComponent, canActivate: [AuthGuard] },
   {path: 'articles/:id', component: ArticleDetailsComponent, canActivate: [AuthGuard] },

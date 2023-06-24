@@ -8,5 +8,6 @@ export interface Comment {
   article?: Article;
   userId?: number;
   articleId?: number;
-  date?: Date
+  date?: Date,
+  validated: boolean;
 }
